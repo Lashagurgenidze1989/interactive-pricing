@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  font-size: 10px;
+}
+
+body {
+  padding: 8.9rem 3.2rem;
+  background-image: url(./images/pattern-circles.svg),
+    url(./images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  background-size: 145px 145px, auto;
+  background-position: center top 48px, top left;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  color: #293356;
+  text-align: center;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+header p {
+  color: #848ead;
+  text-align: center;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23px;
+  width: 22ch;
+  margin-top: 8px;
+  margin-bottom: 6.4rem;
+}
+
+main {
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 20px 30px -5px rgba(127, 137, 185, 0.15);
+  padding: 3.4rem 1.2rem;
+  /* width: 32.7rem; */
+}
+
+.viewsAndCost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 8.9rem;
+}
+
+.viewsAndCost input {
+  position: absolute;
+}
+
+.viewsAndCost .views {
+  color: #848ead;
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 1.714px;
+  text-transform: uppercase;
+}
+
+.viewsAndCost .cost {
+  color: #293356;
+  text-align: right;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewsAndCost .cost span {
+  color: #848ead;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-left: 10px;
+}
+
+.discount {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 3.4rem;
+}
+
+.discount p {
+  color: #848ead;
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.spanBG {
+  width: 41px;
+  height: 19px;
+  border-radius: 9.5px;
+  background: #feede8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+}
+
+.spanBG span {
+  color: #ff8d68;
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.check {
+  width: 43px;
+  height: 22px;
+  background-color: #cfd8ef;
+  border-radius: 25px;
+  position: relative;
+}
+
+.leftWhite {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 25px;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+}
+
+.rightWhite {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 25px;
+  position: absolute;
+  top: 3px;
+  left: 23px;
+  display: none;
+}
