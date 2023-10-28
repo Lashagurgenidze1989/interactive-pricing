@@ -79,7 +79,12 @@ main {
   text-transform: uppercase;
 }
 
-.viewsAndCost .cost {
+.cost_month {
+  display: flex;
+  align-items: center;
+}
+
+.cost {
   color: #293356;
   text-align: right;
   font-size: 32px;
@@ -87,15 +92,11 @@ main {
   font-weight: 800;
   line-height: normal;
   letter-spacing: -0.8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.viewsAndCost .cost span {
+.monthly {
   color: #848ead;
   text-align: center;
-  font-family: Manrope;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -241,21 +242,113 @@ button {
   line-height: normal;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 #range {
   width: 279px;
   height: 8px;
   border-radius: 5px;
-  background: #ecf0fb;
-  position: relative;
+  background: linear-gradient(
+    to right,
+    var(--before-thumb-color) 0%,
+    var(--before-thumb-color) var(--thumb-position),
+    var(--after-thumb-color) var(--thumb-position),
+    var(--after-thumb-color) 100%
+  );
   appearance: none;
+  position: absolute;
+  top: 58px;
 }
 
-.thumb {
-  position: absolute;
-  top: 1px;
-  left: 1px;
+:root {
+  --before-thumb-color: #a4f3eb;
+  --after-thumb-color: #ecf0fb;
+  --thumb-position: 50%;
 }
 
-.imgthumb {
-  position: absolute;
+#range::-webkit-slider-thumb {
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background-image: url(./images/thumb.svg);
+  background-repeat: no-repeat;
+  background-position: top 25% left 50%;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 15px 30px 0px rgba(0, 255, 231, 0.6);
+  transition: 0.3s;
+}
+
+@media (min-width: 1440px) {
+  body {
+    padding: 10.4rem 45rem 13.7rem;
+  }
+
+  header h1 {
+    font-size: 2.8rem;
+  }
+
+  header p {
+    font-size: 1.5rem;
+    width: 43ch;
+    margin-top: 1.2rem;
+    margin-bottom: 9.2rem;
+  }
+
+  main {
+    padding: 4rem 4.5rem 3.3rem;
+    width: 54rem;
+  }
+
+  .viewsAndCost {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .viewsAndCost .views {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
+
+  .cost {
+    font-size: 4rem;
+    letter-spacing: -1px;
+  }
+
+  .monthly {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+
+  .discount {
+    margin-top: 10.4rem;
+    margin-right: 2rem;
+  }
+
+  hr {
+    width: 540px;
+    top: 26.1rem;
+  }
+
+  #range {
+    width: 44.4rem;
+    top: 100px;
+  }
+
+  .bottom {
+    flex-direction: row;
+    margin-top: 7.3rem;
+    justify-content: space-between;
+  }
+
+  .offerList {
+    align-items: flex-start;
+  }
+
+  button {
+    margin-top: 0;
+  }
 }
