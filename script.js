@@ -38,13 +38,12 @@ function generator(event) {
 }
 
 discountCheck.addEventListener("change", (event) => {
+  let originalValue = Number(range.value);
   if (event.target.checked) {
     range.min = "72";
     range.max = "288";
     range.step = "36";
-    console.log(range.value);
-    range.value = (Number(range.value) * 12 * 75) / 100;
-    console.log(range.value);
+    range.value = (originalValue * 12 * 75) / 100;
 
     cost.innerHTML = `$${range.value.toFixed(2)}`;
     monthly_yearly.innerHTML = "/ year";
@@ -56,5 +55,10 @@ discountCheck.addEventListener("change", (event) => {
     monthly_yearly.innerHTML = "/ month";
     leftWhite.style.display = "block";
     rightWhite.style.display = "none";
+
+    range.min = "8";
+    range.max = "32";
+    range.step = "4";
+    range.value = (originalValue * 100) / 75 / 12;
   }
 });
