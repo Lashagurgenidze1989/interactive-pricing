@@ -6,27 +6,29 @@ const discountCheck = document.querySelector("#checkbox");
 
 const monthly_yearly = document.querySelector(".monthly");
 const leftWhite = document.querySelector(".leftWhite");
-const rightWhite = document.querySelector(".rightWhite");
+
+const checkbox = document.querySelector(".check");
 
 range.addEventListener("input", () => generator(event));
 
 function generator(event) {
-  if (Number(event.target.value) === 8) {
+  let number = Number(event.target.value);
+  if (number === 8 || number === 72) {
     views.innerHTML = "10K pageviews";
-  } else if (Number(event.target.value) === 12) {
+  } else if (number === 12 || number === 108) {
     views.innerHTML = "50K pageviews";
-  } else if (Number(event.target.value) === 16) {
+  } else if (number === 16 || number === 144) {
     views.innerHTML = "75K pageviews";
-  } else if (Number(event.target.value) === 20) {
+  } else if (number === 20 || number === 180) {
     views.innerHTML = "100K pageviews";
-  } else if (Number(event.target.value) === 24) {
+  } else if (number === 24 || number === 216) {
     views.innerHTML = "500K pageviews";
-  } else if (Number(event.target.value) === 28) {
+  } else if (number === 28 || number === 252) {
     views.innerHTML = "750K pageviews";
-  } else if (Number(event.target.value) === 32) {
+  } else if (number === 32 || number === 288) {
     views.innerHTML = "1M pageviews";
   }
-  cost.textContent = "$" + Number(event.target.value).toFixed(2);
+  cost.textContent = "$" + number.toFixed(2);
 
   let value = event.target.value;
   let min = event.target.min;
@@ -45,20 +47,17 @@ discountCheck.addEventListener("change", (event) => {
     range.step = "36";
     range.value = (originalValue * 12 * 75) / 100;
 
-    cost.innerHTML = `$${range.value.toFixed(2)}`;
+    cost.innerHTML = `$${parseInt(range.value).toFixed(2)}`;
     monthly_yearly.innerHTML = "/ year";
-
-    leftWhite.style.display = "none";
-    rightWhite.style.display = "block";
+    checkbox.style.background = "#7aeadf";
   } else {
-    cost.innerHTML = `$${range.value.toFixed(2)}`;
-    monthly_yearly.innerHTML = "/ month";
-    leftWhite.style.display = "block";
-    rightWhite.style.display = "none";
-
     range.min = "8";
     range.max = "32";
     range.step = "4";
     range.value = (originalValue * 100) / 75 / 12;
+
+    cost.innerHTML = `$${parseInt(range.value).toFixed(2)}`;
+    monthly_yearly.innerHTML = "/ month";
+    checkbox.style.background = "#cfd8ef";
   }
 });
